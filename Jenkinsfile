@@ -16,7 +16,7 @@ pipeline {
                
                 
                 withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
-                    echo 'Hello Mr. ${USERNAME} "${USERPASS}"'
+                    sh("echo ${USERPASS}")
                     sshPublisher(
                         failOnError: true,
                         continueOnError: false,
