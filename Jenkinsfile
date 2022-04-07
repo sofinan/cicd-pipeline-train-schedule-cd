@@ -19,11 +19,11 @@ pipeline {
                     
                     sh("echo ${USERPASS}")
                     sshPublisher(
-                        verbose: true,
                         failOnError: false,
                         continueOnError: false,
                         publishers: [
                             sshPublisherDesc(
+                                verbose: true,
                                 configName: 'staging',
                                 sshCredentials: [
                                     username: "$USERNAME",
